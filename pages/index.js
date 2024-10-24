@@ -6,9 +6,7 @@ import { useEffect } from 'react';
 export default function Home({locale}) {
   const { t } = useTranslation();
 
-  useEffect(() => {
-    i18n.changeLanguage(locale);
-  }, [locale]);
+  i18n.changeLanguage(locale);
 
   return (
     <>
@@ -22,7 +20,7 @@ export default function Home({locale}) {
 
 export async function getServerSideProps(context) {
   const locale = context.locale
-
+  
 
   await i18n.changeLanguage(locale); 
 
